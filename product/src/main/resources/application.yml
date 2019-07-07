@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloud_demo
+    username: root
+    password: root
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  application:
+    name: product
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.baizhi.entity
+server:
+  port: 9999
+  jsp-servlet:
+    init-parameters:
+      development: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
